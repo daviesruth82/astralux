@@ -1,18 +1,28 @@
-﻿import ProductCard, {dummyProducts} from "./components/ProductCard";
+﻿import ProductCard, { dummyProducts } from "./components/ProductCard";
 
 export default function Home() {
   return (
-    <div className="bg-pink-100 w-[100vw] h-full flex justify-center items-center ">
+    <div className="bg-pink-100 min-h-screen w-full flex flex-col items-center py-8">
+      
+      <main className="w-[95%] flex flex-col gap-12">
+        
+       
+        <section className="flex flex-col md:flex-row justify-between items-center gap-6 w-full py-6">
+          <h3 className="text-rose-700 w-full md:w-1/2 text-4xl sm:text-6xl lg:text-8xl font-black text-center md:text-left">
+            Luxury at its finest
+          </h3>
+          <div className="w-full md:w-1/2 h-[250px] sm:h-[350px] rounded-2xl overflow-hidden shadow-lg">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmXUjEcIfDHV3D4bv7bJdMBUeKfha7F8MNMKaCxwJow&s=10"
+              alt="shoe"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </section>
 
-   <main className="w-[95%] h-[90%] flex flex-col ">
-    <section className=" h-[300px] w-[100%] flex justify-start items-center">
-<h3 className="text-rose-700 w-[50%] text-8xl font-black">Luxury at its finest</h3>
-<div className=" h-[100%] w-[50%]  ml-10 shadow-lg">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmXUjEcIfDHV3D4bv7bJdMBUeKfha7F8MNMKaCxwJow&s=10" alt="shoe" className="h-[100%] w-[100%] object-cover"></img>
-</div>
-    </section>
-    <section className="w-[100%] h-[60%] flex justify-between flex-wrap gap-5" >
-{dummyProducts.map((item) => (
+        
+        <section className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-items-center">
+          {dummyProducts.map((item) => (
             <ProductCard
               key={item.id}
               title={item.title}
@@ -21,11 +31,9 @@ export default function Home() {
               category={item.category}
             />
           ))}
+        </section>
 
-</section>
-   </main>
+      </main>
     </div>
   );
 }
-
-

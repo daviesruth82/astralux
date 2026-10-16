@@ -123,7 +123,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ title, price, image, category }: ProductCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-md h-[400px] w-[350px] flex flex-col overflow-hidden group transition-transform hover:-translate-y-1 shrink-0">
+    <div className="bg-white rounded-xl shadow-md h-[380px] w-full max-w-[300px] flex flex-col overflow-hidden group transition-transform hover:-translate-y-1">
       <div className="relative w-full h-[65%] bg-gray-100 overflow-hidden p-4 flex items-center justify-center">
         <img
           src={image}
@@ -132,10 +132,10 @@ export default function ProductCard({ title, price, image, category }: ProductCa
         />
       </div>
 
-      <div className="h-[35%] p-3 flex flex-col justify-between">
+      <div className="h-[35%] p-4 flex flex-col justify-between">
         {category && <span className="text-[10px] uppercase tracking-wider text-gray-400 truncate">{category}</span>}
-        <h4 className="font-semibold text-gray-800 text-xs line-clamp-2">{title}</h4>
-        <p className="text-sm font-bold text-rose-700">${price}</p>
+        <h4 className="font-semibold text-gray-800 text-sm line-clamp-2">{title}</h4>
+        <p className="text-sm font-bold text-rose-700">${price.toLocaleString()}</p>
       </div>
     </div>
   );
